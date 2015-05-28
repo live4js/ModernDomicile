@@ -1,0 +1,208 @@
+<meta property="og:price:amount" content="%%GLOBAL_ProductPrice%%" />
+<meta property="og:price:currency" content="USD" />
+<link rel="stylesheet" type="text/css" href="%%GLOBAL_CdnAppPath%%/javascript/jquery/themes/cupertino/ui.all.css?%%GLOBAL_JSCacheToken%%" />
+<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_productAttributesCssPath%%?%%GLOBAL_JSCacheToken%%" />
+<script type="text/javascript" src="%%GLOBAL_jQueryUIPath%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jquery.form.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.attributes.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jCarousel/jCarousel.js?%%GLOBAL_JSCacheToken%%"></script>
+%%SNIPPET_ProductImageZoomer%%
+
+<script type="text/javascript">//<![CDATA[
+var ThumbURLs = new Array();
+var ProductImageDescriptions = new Array();
+var CurrentProdThumbImage = %%GLOBAL_CurrentProdThumbImage%%;
+var ShowVariationThumb =false;
+var ProductThumbWidth = %%GLOBAL_ProductThumbWidth%%;
+var ProductThumbHeight =  %%GLOBAL_ProductThumbHeight%%;
+var ProductMaxZoomWidth = %%GLOBAL_ProductMaxZoomWidth%%;
+var ProductMaxZoomHeight =  %%GLOBAL_ProductMaxZoomHeight%%;
+var ProductTinyWidth = %%GLOBAL_ProductMaxTinyWidth%%;
+var ProductTinyHeight =  %%GLOBAL_ProductMaxTinyHeight%%;
+
+%%GLOBAL_ProdImageJavascript%%
+
+//Don't enable Cloud Zoom (product image zoom) on touch device
+//Mouseenter/Mouseover events are not ideal for touch devices
+//for more info search for this code in /script/main.js
+if (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)){
+    var ShowImageZoomer = false;
+} else {
+    var ShowImageZoomer = %%GLOBAL_ShowImageZoomer%%;
+}
+
+var productId = %%GLOBAL_ProductId%%;
+//]]></script>
+%%Discount.FreeShippingEligibility%%
+<div class="Block Moveable Panel PrimaryProductDetails no-ptop" id="ProductDetails">
+    <div class="BlockContent">
+        %%GLOBAL_ProductDetailFlashMessages%%
+        <!-- left-content -->
+        <div class="left-content">
+            <div class="ProductThumb" style="%%GLOBAL_HideProductThumb%%">
+                %%GLOBAL_LightBoxImageJavascript%%
+                %%SNIPPET_ProductThumbImage%%
+                <div class="ImageCarouselBox" style="%%GLOBAL_HideImageCarousel%%">
+                    <a id="ImageScrollPrev" class="prev" href="#"><i class="fa fa-arrow-left"></i><!-- <img src="%%GLOBAL_IMG_PATH%%/LeftArrow.png" alt="" width="20" height="20" /> --></a>
+                    <div class="ProductTinyImageList">
+                        <ul>
+                            %%SNIPPET_ProductTinyImages%%
+                        </ul>
+                    </div>
+                    <a id="ImageScrollNext" class="next" href="#"><i class="fa fa-arrow-right"></i><!-- <img src="%%GLOBAL_IMG_PATH%%/RightArrow.png" alt="" width="20" height="20" /> --></a>
+                </div>
+                <div style="%%GLOBAL_HideMorePicturesLink%%" class="SeeMorePicturesLink">
+                    <a href="#" onclick="%%GLOBAL_TinyImageClickJavascript%% return false;" class="ViewLarger">%%GLOBAL_SeeMorePictures%%</a>
+                </div>
+            </div>
+            %%GLOBAL_PinterestButton%%
+        </div>
+        <!-- Product Details Content -->
+        <div class="ProductMain">
+            <div class="ProductDetailsGrid">
+                <div class="DetailRow">
+                    <div class="Value" style="display: %%GLOBAL_HideBrandLink%%">
+                        <h4 class="BrandName"><a itemprop="brand" href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></h4>
+                    </div>
+                    
+                    <h1 itemprop="name" >%%GLOBAL_ProductName%%</h1>
+                   <a href="http://store-hndqqpkc.mybigcommerce.com/moderndomicile-product-inquiry-form/"><p><font size="1"><font color="gray">
+                       Have specifications,trade,price related, or other questions? – Contact Us Here!</font></a>
+                    
+                </div>
+                       <!--Line 113 LA Start  This is the original-->
+                <div itemprop="aggregateRating" itemscope
+        itemtype="http://schema.org/AggregateRating" class="DetailRow" style="display: %%GLOBAL_HideRating%%"><!--Line 113 End-->
+                    <div class="Value">
+                        <span>
+                            <!--Line 116 LA Start  This is the original-->
+                            <span itemprop="ratingValue" content="%%GLOBAL_Rating%%"class="starRating%%GLOBAL_Rating%%"></span>
+<span style="display:%%GLOBAL_HideReviewLink%%">
+    <meta itemprop="worstRating" content="1"/>
+<meta itemprop="bestRating" content="5" />
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  if (%%GLOBAL_ProductNumReviews%% == 0) {
+    $("div[itemprop='aggregateRating']").removeAttr('itemtype');
+    $("div[itemprop='aggregateRating']").removeAttr('itemscope');
+    $("div[itemprop='aggregateRating']").removeAttr('itemprop');
+    $("img[itemprop='ratingValue']").removeAttr('content');
+    $("img[itemprop='ratingValue']").removeAttr('itemprop');
+    $("meta[itemprop='worstRating']").remove();
+    $("meta[itemprop='bestRating']").remove();
+    $("*[itemprop='reviewCount']").removeAttr('content');
+    $("*[itemprop='reviewCount']").removeAttr('itemprop');
+  }
+});
+//]]>
+</script>
+   <!--Line 116 LA End  This is the original--> 
+                                <!-- OLD WAY --
+                                <a href="#ProductReviews" onclick="%%GLOBAL_ReviewLinkOnClick%%">
+                                    %%GLOBAL_ReviewLinkText%%
+                                </a> 
+                                <!--  OLD WAY -->
+                                <a itemprop="reviewCount" content="%%GLOBAL_ProductNumReviews%%"href="#ProductReviews" onclick="$('#ProductReviews').find('.subtitle').trigger('click');">
+                                    %%GLOBAL_ReviewLinkText%%
+                                </a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="DetailRow PriceRow p-price" style="%%GLOBAL_HidePrice%%">
+                    <div class="Value">
+                        <span class="ProductPrice retail-product-price">%%GLOBAL_RetailPrice%%</span>
+                        <span itemprop="price" class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</span>
+                        <meta itemprop="priceCurrency" content="USD"/> 
+<link itemprop="availability" href="http://schema.org/InStock"/>
+
+<div id="AllPricesAreInCurrency" style="display: none;">%%GLOBAL_AllPricesAreInCurrency%%</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var cleanPrice = $("em[itemprop='price']").text().replace(/[^0-9.]*/g, "");
+  $("em[itemprop='price']").attr('content',cleanPrice);
+
+  var currency = $("#AllPricesAreInCurrency span").text();
+  $("meta[itemprop='priceCurrency']").attr('content',currency);
+
+  if ($(".ExpectedReleaseDate").length != 0) {
+    $("link[itemprop='availability']").attr('href','http://schema.org/PreOrder');
+  };
+ 
+  if ($(".CurrentlySoldOut").length != 0) {
+    $("link[itemprop='availability']").attr('href','http://schema.org/OutOfStock');
+  };
+});
+//]]>
+</script>
+                    </div>
+                </div>
+                <div class="s-price">
+                    %%GLOBAL_IncludingExcludingTax%% %%GLOBAL_YouSave%%
+                </div>
+            </div>
+
+            %%GLOBAL_FacebookLikeButtonAbove%%
+
+            <div class="clear"></div>
+
+            %%Panel.ProductTabs%%
+
+            %%SNIPPET_ProductAddToCartRight%%
+            %%SNIPPET_ProductExpectedReleaseDate%%
+
+            <div class="clear"></div>
+            %%GLOBAL_AddThisLink%%
+            %%GLOBAL_FacebookLikeButtonBelow%%
+        </div>
+
+        %%SNIPPET_ProductAddToCartBelow%%
+                       
+        <div class="clear"></div>
+<center><script type="text/javascript" data-pp-pubid="7af8679484" data-pp-placementtype="800x66"> (function (d, t) {
+"use strict";
+var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+n.src = "//paypal.adtag.where.com/merchant.js";
+s.parentNode.insertBefore(n, s);
+}(document, "script"));
+    </script></center>
+                       
+        <div id="prodAccordion">
+            %%Panel.ProductDescription%%
+            %%Panel.ProductVideos%%
+            %%Panel.ProductWarranty%%
+            %%Panel.ProductOtherDetails%%
+            %%Panel.SimilarProductsByTag%%
+            %%Panel.ProductReviews%%
+            %%Panel.ProductByCategory%%
+            <!-- Panel.ProductVendorsOtherProducts -->
+        </div>
+
+    </div>
+</div>
+%%Panel.RichSnippets%%
+                       <script type="text/javascript">
+//<![CDATA[
+$(function() {
+  $("li[itemprop='review']" ).each(function( index ) {
+
+    var timeElement = $(this).find("time[itemprop='datePublished']");
+    var reviewDate = new Date(timeElement.text());
+
+    if (!isNaN(reviewDate.getTime())) {
+      var isoDate = reviewDate.getFullYear()+"-";
+      if (reviewDate.getMonth()+1 < 10) {isoDate += '0';}
+      isoDate += (reviewDate.getMonth()+1)+"-";
+      if (reviewDate.getDay() < 10) {isoDate += '0';}
+      isoDate += reviewDate.getDate();
+
+      timeElement.attr('datetime',isoDate );
+    }
+  });
+});
+//]]>
+</script>
+

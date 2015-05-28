@@ -1,0 +1,11 @@
+/* Important! This file is to only be edited through WebDAV or through the control panel by the client, not theme partners/designers. */
+
+<!--.ProductList .ProductImage img, #ProductDetails .ProductThumbImage img {
+    width:400px !important;
+}-->
+
+/* Ninja'd by Marco on Case 01883218 */
+ .slide-show .slide-text, .slide-show .slide-heading {
+    background: none;
+}
+/* End Ninja Edit */
